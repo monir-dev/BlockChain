@@ -1,0 +1,16 @@
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.exe
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.csprojAssemblyReference.cache
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.AssemblyInfoInputs.cache
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.AssemblyInfo.cs
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.deps.json
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.runtimeconfig.json
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.runtimeconfig.dev.json
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.dll
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\01Client.pdb
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\NBitcoin.dll
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+E:\Test Projects\BlockChain\01Client\bin\Debug\netcoreapp3.0\QBitNinja.Client.dll
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.csproj.CopyComplete
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.dll
+E:\Test Projects\BlockChain\01Client\obj\Debug\netcoreapp3.0\01Client.pdb
