@@ -28,14 +28,14 @@ namespace BlockChain.Api
         [HttpGet("transactions/get")]
         public IActionResult GetTransaction()
         {
-            var response = new { transactions = blcokChain.geTransactions() };
+            var response = new { transactions = blcokChain.GetTransactions() };
             return Ok(response);
         }
 
         [HttpGet("chain")]
         public IActionResult FullChain()
         {
-            var blocks = blcokChain.getBlocks();
+            var blocks = blcokChain.GetBlocks();
             var response = new
             {
                 chain = blocks,
@@ -81,7 +81,7 @@ namespace BlockChain.Api
         [HttpGet("nodes/get")]
         public IActionResult GetNodes()
         {
-            return Ok(new { nodes = blcokChain.getNodes() });
+            return Ok(new { nodes = blcokChain.GetNodes() });
         }
 
         /// <summary>

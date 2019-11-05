@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Coinbase Page";
+}
+
+    <div class="container">
+        <h2>CoinBase</h2>
+        @{
+            int i = 1;
+            int j = 1;
+        }
+        @foreach (var block in ViewBag.Blocks as List<Block>)
+        {
+            <div class="col-sm-8">
+                <div id="@($"block{i}chain{j}well")" class="card card-body bg-success">
+                    <form>
+                        <div class="form-group row">
+                            <label for="@($"block{i}chain{j}number")" class="col-sm-2 col-form-label">Block:</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">#</span>
+                                    </div>
+                                    <input type="text" id="@($"block{i}chain{j}number")" class="form-control" value="@i" onkeyup="updateChain(1, 1)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="@($"block{i}chain{j}nonce")" class="col-sm-2 col-form-label">Nonce:</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="@($"block{i}chain{j}nonce")" class="form-control" value="@block.Proof" onkeyup="updateChain(1, 1)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Tx:</label>
+                            <div class="col-sm-10">
+                                @foreach (var item in block.Transactions)
+                                {
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" id="@($"block{i}chain{j}tx0value")" class="form-control" value="@item.Amount" onkeyup="updateChain(1, 1)">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">From:</span>
+                                        </div>
+                                        <input type="text" id="@($"block{i}chain{j}tx0from")" class="form-control" value="@item.Sender" onkeyup="updateChain(1, 1)">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">-></span>
+                                        </div>
+                                        <input type="text" id="@($"block{i}chain{j}tx0to")" class="form-control" value="@item.Recipient" onkeyup="updateChain(1, 1)">
+                                    </div>
+
+                                    j++;
+                                }
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            i++;
+        }
+    </div>
+
+
+
+
+@section Css
+{
+
+}
+
+@section Scripts
+{
+    <script>
+        
+    </script>
+}

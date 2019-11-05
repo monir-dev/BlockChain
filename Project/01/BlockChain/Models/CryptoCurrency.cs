@@ -189,7 +189,7 @@ namespace BlockChain.Models
 
             foreach (var node in _nodes)
             {
-                var url = new Uri(node.Address, "/chain");
+                var url = new Uri(node.Address, "/api/BlockChain/chain");
                 var request = (HttpWebRequest) WebRequest.Create(url);
                 var response = (HttpWebResponse) request.GetResponse();
 
@@ -329,17 +329,17 @@ namespace BlockChain.Models
             return rsp;
         }
 
-        internal List<Transaction> geTransactions()
+        internal List<Transaction> GetTransactions()
         {
             return _currentTransactions;
         }
 
-        internal List<Block> getBlocks()
+        internal List<Block> GetBlocks()
         {
             return _chain;
         }
 
-        internal List<Node> getNodes()
+        internal List<Node> GetNodes()
         {
             return _nodes;
         }

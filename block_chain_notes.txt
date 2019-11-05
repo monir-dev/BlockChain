@@ -1,0 +1,93 @@
+
+// BlockChain Books
+https://github.com/ProgrammingBlockchain/ProgrammingBlockchain
+https://programmingblockchain.gitbook.io/programmingblockchain/foreword/second_communitry_edition
+
+https://github.com/bitcoinbook/bitcoinbook
+https://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=6354608
+https://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=10170217
+
+https://bitcoin.org/en/developer-guide
+https://bitcoin.org/en/bitcoin-core/
+
+https://github.com/bitcoinbook/bitcoinbook/
+https://qbitninja.docs.apiary.io/
+https://github.com/MetacoSA/NBitcoin.Indexer
+https://www.nuget.org/packages/QBitninja.Client
+
+
+Resources:
+-----------
+BizSpark
+https://github.com/MetacoSA/NBitcoin
+https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/csharp.html
+https://www.reddit.com/r/Bitcoin/
+https://www.c-sharpcorner.com/article/blockchain-basics-building-a-blockchain-in-net-core/
+https://www.blockchain.com/btc/address/1KF8kUVHK42XzgcmJF4Lxz4wcL5WDL97PB
+https://btcprivate.org/wallets
+
+
+Keywords:
+---------
+get testnet bitcoins
+Base58Check
+ScriptPubKey 
+Merkle tree
+Simple Payment Verification (SPV)
+solvency publicly
+bitcoins, bits and satoshis
+
+
+Good BlockChain project:
+-------------------------
+https://github.com/NicolasDorier/BlockchainProgramming
+https://github.com/stratisproject/StratisBitcoinFullNode
+https://github.com/stratisproject/NStratis
+
+
+Tested Project:
+---------------
+https://github.com/anders94/blockchain-demo/tree/reword
+https://github.com/anders94/public-private-key-demo
+
+https://github.com/innoq/innoq-blockchain-csharp
+
+//non tested project
+https://github.com/seratio/Blockchain-Demo
+
+
+
+
+// Create Transaction
+https://www.codeproject.com/Articles/1115639/Build-your-own-Bitcoin-wallet
+https://www.codeproject.com/Articles/1151054/Create-a-Bitcoin-transaction-by-hand
+
+https://bitnodes.earn.com/
+https://www.blockchain.com/btc/pushtx
+https://www.blockchain.com/btc/decode-tx
+
+
+// Verify Transactions
+http://smartbit.com.au/
+https://testnet.smartbit.com.au/
+
+
+
+address
+mkZzCmjAarnB31n5Ke6EZPbH64Cxexp3Jp
+
+txid
+210fc0a4ce60fa7f8ded2fff46c6346dc2c7f4af79e84ca220114909f07b729b
+
+
+
+
+Node:
+-------
+https://github.com/15Dkatz/cryptochain
+
+redis: redis-server
+MacOS: https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298
+Linux: https://redis.io/topics/quickstart
+Windows: https://github.com/ServiceStack/redis-windows
+

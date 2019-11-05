@@ -1,0 +1,65 @@
+﻿@model List<Node>
+@{
+    ViewData["Title"] = "Configure Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Add BlockChain nodes
+                </h4>
+                <p class="card-text">Enter a list of BlockChain node URLs separated by comma and click on "Add" button to add transaction</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container alert alert-secondary">
+    <form id="node_form" method="post" action="@Url.Action("RegisterNodes", "Home")">
+        <div class="row">
+            <label class="col-md-2">Node URLs:</label>
+            <div class="col-md-10">
+                <input type="text" name="nodes" id="nodes" rows="2" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="submit" id="add_node_button" value="Add Node" class="btn btn-primary btn-lg"/>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<hr />
+
+@*List of nodes*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <h4 class="card-title">This node can retrieve BlockChain data from the following nodes:</h4>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li><a href="@item.Address">@item.Address</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Css
+{
+}
+
+@section Scripts
+{
+}

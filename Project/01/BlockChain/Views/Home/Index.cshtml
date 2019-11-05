@@ -2,7 +2,142 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <div class="card-title">
+                    Transactions to be added to the next block &nbsp;&nbsp;&nbsp;
+                    <button type="submit" id="refresh_transactions" class="btn btn-xs btn-primary"><i class="fa  fa-refresh"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+@{
+    var transactions = ViewBag.Transactions as List<Transaction>;
+    var blocks = ViewBag.Blocks as List<Block>;
+}
+
+@*Unlimited Transactions table*@
+<div class="container">
+    <table id="unlimited_transactions_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Recipient Address</th>
+                <th>Sender Address</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach (var tranaction in transactions)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@tranaction.Recipient</td>
+                    <td>@tranaction.Sender</td>
+                    <td>@tranaction.Amount</td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+
+    <div class="col-md-12 text-center">
+        <a href="@Url.Action("Mine", "Home")" id="mine_button" class="btn btn-primary btn-lg" value="">Mine</a>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <div class="card-title">
+                    Transactions on BlockChain &nbsp;&nbsp;&nbsp;
+                    <button type="submit" id="refresh_blockchain" class="btn btn-xs btn-primary"><i class="fa  fa-refresh"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*BlockChain Transactions table*@
+<div class="container">
+    <table id="transactions_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th width="20%">Recipient Address</th>
+                <th width="20%">Sender Address</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Block</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int j = 1;
+            }
+            @foreach (var block in blocks)
+            {
+                foreach (var item in block.Transactions)
+                {
+                    <tr>
+                        <td>@j</td>
+                        <td>@item.Recipient</td>
+                        <td>@item.Sender</td>
+                        <td>@item.Amount</td>
+                        <td>@block.Timestamp</td>
+                        <td>@(block.Index + 1)</td>
+                    </tr>
+                    j++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section Css
+{
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
+
+@section Scripts
+{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        //$(document).ready(function () {
+        //    $('#myTable').DataTable();
+        //});
+
+        $(function() {
+            $("#unlimited_transactions_table").DataTable();
+            $("#transactions_table").DataTable();
+
+            $("#refresh_transactions").click(function() {
+                window.location.reload();
+            });
+
+            $("#refresh_blockchain").click(function() {
+                $.ajax({
+                    url: "/api/BlockChain/nodes/resolve",
+                    type: "GET",
+                    success: function(response) {
+                        window.location.reload();
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+}
