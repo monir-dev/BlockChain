@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="card-body">
+                    <h4 class="card-title">Wallet Generator</h4>
+                    <p class="card-text">Click on the button to Generate your blockchain wallet</p>
+                    <input type="button" value="Generate Wallet" class="btn btn-primary btn-lg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br />
+
+
+<div class="container">
+    <div class="row">
+        <label class="col-sm-2">Public Key:</label>
+        <div class="col-sm-10">
+            <textarea name="public_key" id="public_key" rows="3" class="form-control" readonly=""></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label class="col-sm-2">Public Key:</label>
+        <div class="col-sm-10">
+            <textarea name="private_key" id="private_key" rows="3" class="form-control" readonly=""></textarea>
+        </div>
+    </div>
+    <br />
+    <div id="warning" class="row" style="display: none;">
+        <div class="col-sm-12">
+            <div class="alert alert-danger" role="alert">
+                IMPORTANT
+                <ul>
+                    <li>Save your private and public keys. These keys cannot be recovered</li>
+                    <li>Don't share your private key with anyone</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Css
+{
+
+}
+
+@section Scripts
+{
+    <script>
+        $(function() {
+            $('input').click(function() {
+                $.ajax({
+                    url: "/api/client/wallet/new",
+                    type: "GET",
+                    success: function(response) {
+                        document.getElementById("private_key").innerHTML = response["private_key"];
+                        document.getElementById("public_key").innerHTML = response["public_key"];
+                        document.getElementById("warning").style.display = "block";
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+}

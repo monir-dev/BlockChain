@@ -32,8 +32,8 @@ namespace BlockChain.Models
             _chain = new List<Block>();
             _nodes = new List<Node>();
 
-            minerPrivateKey = "L3aq7WPiSois3N&GxTr6ZSXMNdfbAZWNebiYvKK6hAUBijk95rL"; //_minersWallet.PrivateKey;
-            NodeId = "18jp31DcT3n5vsYHGVhhQa3qsvEve4EUoQ"; //_minersWallet.PublicKey;
+            minerPrivateKey = "L5n8vbu774xmjfkqybkTNfTLNmVVVVQFerXoGRd1vBtzRbSviM7r"; //_minersWallet.PrivateKey;
+            NodeId = "13XZQoFrr5tWi4Ju6FTJ1cxeM1Ujxo26Lv"; //_minersWallet.PublicKey;
 
             //            string sign = RSA.RSA.Sign(minerPrivateKey, "h");
             //            bool b = RSA.RSA.Verify(NodeId, "h", sign);

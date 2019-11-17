@@ -38,7 +38,7 @@ namespace BlockChain
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                builder.AllowAnyMethod()
+                builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             }));
@@ -68,6 +68,7 @@ namespace BlockChain
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseCors("MyPolicy");
 
             // Enable middleware to server generated Swagger as a JSON endpoint.
             app.UseSwagger();
